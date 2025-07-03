@@ -12,26 +12,45 @@
       width: 100%;
       background-color: #f9f9f9;
       font-family: sans-serif;
+      overflow: hidden;
     }
-    .viewer {
-      position: absolute;
-      top: 0;
-      left: 0;
+
+    .wrapper {
       width: 100%;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .viewer {
+      width: 90%;
+      height: 90%;
       border: none;
     }
 
-    /* تصغير العرض للجوال */
     @media (max-width: 768px) {
       .viewer {
-        transform: scale(0.95);
-        transform-origin: top;
+        width: 85%;
+        height: 85%;
+        transform: scale(0.85);
+        transform-origin: top center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .viewer {
+        width: 80%;
+        height: 80%;
+        transform: scale(0.75);
+        transform-origin: top center;
       }
     }
   </style>
 </head>
 <body>
-  <iframe class="viewer" src="CV.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+  <div class="wrapper">
+    <iframe class="viewer" src="CV.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+  </div>
 </body>
 </html>
